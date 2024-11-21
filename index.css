@@ -1,4 +1,8 @@
-:root{
-    color: #fff;
-    background-image:  url(../img/hero/about_hero.png);
+/* :root {
+    --main-bg: url('https://themewagon.github.io/timezone/assets/img/hero/about_hero.png') center/cover no-repeat;
+    background-repeat: no-repeat;
+    background-position: center center;
+} */
+:root {
+    --main-bg: url('https://themewagon.github.io/timezone/assets/img/hero/about_hero.png');
 }
