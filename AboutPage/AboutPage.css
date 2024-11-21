@@ -1,6 +1,16 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
+.header-section {
+    background: var(--main-bg); /* Sử dụng hình nền từ :root */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 250px; /* Chiều cao của header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .about-section {
     background-image: url('images.unsplash.com/photo-1533628635777-112b2239b1c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
