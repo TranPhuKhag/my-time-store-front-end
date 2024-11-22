@@ -35,14 +35,35 @@
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
                 <div class="d-flex align-items-center ms-3">
-                    <a href="#" class="text-dark me-3"><i class="bi bi-search"></i></a>
+                    <!-- Search Icon -->
+                    <a href="#" class="text-dark me-3" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <i class="bi bi-search"></i>
+                    </a>
                     <a href="#" class="text-dark me-3"><i class="bi bi-person"></i></a>
                     <a href="#" class="text-dark"><i class="bi bi-cart"></i></a>
                 </div>
             </div>
-        </div>
+        </div>  
     </nav>
 
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for products, categories, or articles..." aria-label="Search">
+                            <button class="btn btn-dark" type="button">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Hero Section -->
