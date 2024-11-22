@@ -110,10 +110,6 @@ body {
 
 
 
-
-
-
-
 /* footer */
 /* Hiệu ứng hover cho tiêu đề */
 footer h5:hover {
@@ -150,3 +146,6 @@ footer .social-icons a:hover {
     color: #e74c3c; /* Đổi màu biểu tượng sang đỏ */
     transform: rotate(10deg); /* Xoay nhẹ */
 }
+
+
+
