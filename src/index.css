@@ -1,21 +1,32 @@
 
-
+:root {
+  --main-color: #fdcc7f;
+  --hover: #ffb746;
+  --sub-color: #344943;
+  --sub-color-2: #8d5e2f;
+  --sub-color-2-2: #f7e8d3;
+  --sub-color-3: #fff7ec;
+  --sub-color-4: #492d25;
+  --text-color: #212529;
+}
 @font-face {
   font-family: 'Netflix Sans';
   src: local('NetflixSans-Regular'),
-       url('./fonts/NetflixSans-Regular.woff2') format('woff2');
+    url('./fonts/NetflixSans-Regular.woff2') format('woff2');
   font-weight: bold;
 }
+
 @font-face {
   font-family: 'Netflix Sans';
   src: local('NetflixSans-Bold'),
-       url('./fonts/NetflixSans-Bold.woff2') format('woff2');
+    url('./fonts/NetflixSans-Bold.woff2') format('woff2');
   font-weight: 600;
 }
+
 @font-face {
   font-family: 'Netflix Sans';
   src: local('NetflixSans-Light'),
-       url('./fonts/NetflixSans-Light.woff2') format('woff2');
+    url('./fonts/NetflixSans-Light.woff2') format('woff2');
   font-weight: 300;
 }
 

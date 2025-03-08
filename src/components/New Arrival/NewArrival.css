@@ -1,37 +1,186 @@
-/* New-arrival */
-.new-arrivals h2 {
-    font-size: 2.5rem;
-    color: #333;
+/* Bố cục tổng thể */
+.product-section {
+  background-color: #fcf8f2;
+  padding: 40px 0;
 }
 
-.card-title {
-    font-size: 1.25rem;
-    color: #555;
-    margin-top: 10px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-.card-body p {
-    font-size: 1.2rem;
+/* Tiêu đề và nút điều khiển */
+.title-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
-/* Card Hover Effect */
-.card {
-    max-width: 300px; /* Giới hạn chiều rộng tối đa của card */
-    margin: 50px auto; /* Giảm khoảng cách giữa các card */
-    transition: transform 0.3s, box-shadow 0.3s; /* Thêm hiệu ứng chuyển tiếp */
-    border-radius: 50px; /* Đặt giá trị góc bo */
-    overflow: hidden; /* Đảm bảo nội dung không vượt ra ngoài */
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d4a373; /* Màu vàng nhạt giống trong ảnh */
+  margin: 0;
 }
 
-.card:hover {
-    transform: scale(1.05); /* Phóng to card khi hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Thêm bóng cho card khi hover */
+.slider-controls {
+  margin-left: 20px;
+  display: flex;
+  gap: 10px;
 }
 
-/* Card Image Styling */
-.card-img-top {
-    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng của card */
-    height: 250px; /* Cố định chiều cao của hình ảnh */
-    object-fit: cover; /* Đảm bảo hình ảnh được cắt và giữ tỷ lệ */
-    display: block; /* Loại bỏ khoảng trắng dưới hình ảnh */
+.slider-btn {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-btn:hover {
+  background: #f7e8d3;
+}
+
+/* Danh sách sản phẩm */
+.product-list-wrapper {
+  overflow: hidden; /* Ẩn phần thừa của slider */
+}
+
+.product-list {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out; /* Hiệu ứng chuyển động mượt mà */
+}
+
+/* Thẻ sản phẩm */
+.product-card {
+  min-width: 300px;
+  background: white;
+  border-radius: 20px 0;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto; /* Đảm bảo thẻ không bị co lại */
+}
+
+/* Phần thông tin sản phẩm */
+.product-info {
+  background: #8b5e3c; /* Màu nâu giống trong ảnh */
+  padding: 20px;
+  color: white;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-info h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.product-info p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.product-info a {
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.product-info a:hover {
+  text-decoration: underline;
+}
+
+/* Hình ảnh sản phẩm */
+.product-image {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #f5f5f5; /* Màu nền xám nhạt giống trong ảnh */
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+/* Desktop View (default) */
+@media (min-width: 769px) {
+  .product-list {
+    /* Không cần justify-content vì đang dùng transform */
+  }
+
+  .product-card {
+    min-width: 350px; /* Thẻ rộng hơn trên desktop */
+  }
+
+  .product-info {
+    width: 50%;
+  }
+
+  .product-image {
+    width: 50%;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .product-list {
+    gap: 15px;
+  }
+
+  .product-card {
+    min-width: 280px;
+    flex-direction: column; /* Xếp dọc trên mobile */
+  }
+
+  .product-info {
+    padding: 15px;
+    width: 100%; /* Chiếm toàn bộ chiều rộng trên mobile */
+  }
+
+  .product-info h3 {
+    font-size: 18px;
+  }
+
+  .product-info p,
+  .product-info a {
+    font-size: 13px;
+  }
+
+  .product-image {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .product-image img {
+    max-height: 120px; /* Hình ảnh nhỏ hơn trên mobile */
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .slider-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
 }

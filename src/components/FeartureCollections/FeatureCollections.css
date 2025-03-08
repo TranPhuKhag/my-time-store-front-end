@@ -1,46 +1,111 @@
-
-/* Featured Collections Section */
-.featured-collections .collection-item {
-    overflow: hidden;
-    position: relative;
-    border-radius: 10px;
+.collection-title:hover {
+  color: var(--hover);
 }
 
-.featured-collections img {
-    transition: transform 0.5s ease, filter 0.5s ease;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.btn-tittle button {
+  border-radius: 25px;
+  padding: 4px 25px;
+  border: 0.4px solid var(--sub-color);
 }
 
-.featured-collections .collection-item:hover img {
-    transform: scale(1.1);
-    filter: brightness(70%);
+.btn-tittle button:hover {
+  background-color: var(--main-color);
+  color: var(--sub-color);
+  transform: scale(1.05);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.featured-collections .overlay {
-    background: rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    border-radius: 10px;
+.product-price {
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
-.featured-collections .collection-item:hover .overlay {
-    opacity: 1;
+.product-price del {
+  font-size: 0.6rem;
 }
 
-.featured-collections .overlay h5 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+.product-discount {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  background-color: var(--main-color); /* Thêm màu nền cho discount */
+  z-index: 2;
 }
 
-.featured-collections .overlay p {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+.product-button {
+  border-radius: 30px;
+  background-color: white;
+  border: solid 1px black;
+  color: var(--sub-color);
+  padding: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
 }
 
-.featured-collections .overlay a {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-    border-radius: 30px;
+.product-button:hover {
+  color: white;
+  background-color: var(--sub-color);
+}
+
+/* Hiệu ứng hover cho card và ảnh */
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm shadow nhẹ nhàng */
+  border-radius: 15px; /* Viền mềm mại hơn */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm transition cho shadow */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Nâng card lên khi hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Tăng shadow khi hover */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Nâng card lên khi hover */
+}
+
+.card-img-top {
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Hiệu ứng cho ảnh */
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05); /* Phóng to ảnh khi hover */
+}
+
+.card-title {
+  font-size: 0.9rem;
+}
+
+.card-title:hover {
+  color: var(--hover);
+}
+
+
+.card-body-content {
+  text-align: left;
+}
+
+/* Style cho icon sale */
+.sale-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 20px;
+  background-color: var(--sub-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  z-index: 2;
 }

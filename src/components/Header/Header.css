@@ -1,13 +1,166 @@
-/* Navbar */
+.header-section {
+    background-color: var(--sub-color);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Khi cuộn xuống sẽ có hiệu ứng thu nhỏ */
+.header-section.scrolled {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 1); /* Bóng đổ */
+    padding: 2px 0;
+}
+
+#navbar {
+    height: 80px;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-section.scrolled #navbar {
+    height: 60px; /* Thu nhỏ header khi cuộn */
+}
+
+.header-section img {
+    height: 60px;
+    width: 120px;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-section.scrolled img {
+    height: 50px;
+    width: 100px;
+}
+
+/* Đổi màu chữ khi cuộn */
+.header-section.scrolled .nav-link {
+    color: white !important;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: 400;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-item.dropdown .dropdown-menu {
+    display: none;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-item.dropdown:hover .dropdown-toggle {
+    color: var(--hover);
+}
+
 .navbar .nav-item .nav-link:hover {
-    color: #ff4d4d !important;
+    color: var(--hover) !important;
     text-decoration: none;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero img {
-        margin-top: 20px;
-        max-width: 100%;
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 50px;
+    padding: 5px 15px;
+    margin-right: 15px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 14px;
+    padding-left: 10px;
+    width: 140px;
+    border-radius: 50px;
+}
+
+.search-container i {
+    color: #888;
+    margin-right: 10px;
+}
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 920px) {
+    .navbar-nav {
+        text-align: left; /* Căn trái menu để dễ đọc */
+        margin-top: 15px; /* Tăng khoảng cách để tránh chồng lấn */
+        padding-left: 0; /* Đảm bảo không có padding thừa */
+    }
+
+    .navbar-collapse {
+        background-color: var(--sub-color); /* Giữ nền khi thu gọn */
+        padding: 15px; /* Tăng padding để tạo không gian đều */
+    }
+
+    .nav-item {
+        margin: 12px 0; /* Điều chỉnh khoảng cách giữa các mục menu */
+        width: 100%; /* Đảm bảo mỗi mục chiếm toàn bộ chiều rộng */
+    }
+
+    .search-container {
+        margin: 15px 0; /* Tăng khoảng cách trên/dưới cho search */
+        width: 100%;
+        padding: 8px 15px; /* Tăng padding để search trông cân đối */
+        background-color: #f1f1f1; /* Giữ màu nền search */
+        border-radius: 50px; /* Giữ hình dạng tròn */
+    }
+
+    .search-input {
+        width: 100%; /* Điền đầy khung search */
+        font-size: 14px; /* Giữ kích thước chữ */
+        padding-left: 10px;
+    }
+
+    .navbar-toggler {
+        border: none; /* Loại bỏ viền mặc định */
+        margin-left: auto; /* Đẩy nút toggle sang bên phải */
+    }
+
+    .header-section.scrolled #navbar {
+        height: auto; /* Tự động điều chỉnh chiều cao khi thu gọn */
+    }
+
+    .header-section img {
+        height: 50px;
+        width: 100px; /* Giảm kích thước logo trên mobile */
+        margin-left: 15px; /* Thêm margin để logo không dính sát biên */
+    }
+
+    .d-flex {
+        flex-direction: column; /* Xếp icon và search thành cột */
+        align-items: center; /* Căn giữa các icon */
+        gap: 15px; /* Thêm khoảng cách đều giữa search và icon */
+    }
+
+    .nav-item.dropdown .dropdown-menu {
+        position: static; /* Hiển thị dropdown trực tiếp dưới menu */
+        background-color: var(--sub-color);
+        border: none;
+        box-shadow: none;
+        padding: 0; /* Loại bỏ padding thừa */
+        width: 100%; /* Đảm bảo dropdown chiếm toàn bộ chiều rộng */
+    }
+
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-item {
+        color: white !important;
+        padding: 10px 20px; /* Tăng padding để dễ đọc */
+        width: 100%; /* Đảm bảo mỗi item chiếm toàn bộ chiều rộng */
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Hiệu ứng hover nhẹ */
     }
 }

@@ -16,22 +16,22 @@ const Carousel = () => {
 
                 {/* Nội dung chính */}
                 <div className="container d-flex flex-column flex-lg-row align-items-center justify-content-between position-relative">
-                    <div className="text-start">
+                    <div className="text-start col-lg-6">
                         <h1 className="display-4 fw-bold mb-3">
-                            Select Your New <br />
-                            Perfect Style
+                            Đồng Hồ Cuckoo <br />
+                            Cho Mọi Không Gian
                         </h1>
                         <p className="lead mb-4 w-75">
-                            Discover our exclusive collection of handcrafted cuckoo clocks and accessories that redefine classic style with a modern touch.
+                            Bộ sưu tập đồng hồ cuckoo thủ công, kết hợp phong cách cổ điển và hiện đại cho ngôi nhà của bạn.
                         </p>
-                        <a href="#" className="btn btn-light btn-lg">
-                            Shop Now
+                        <a href="#" className="btn btn-light btn-lg decoration">
+                           <i className="bi bi-cart" aria-hidden="true"></i> Mua Ngay
                         </a>
                     </div>
                     <div className="mt-4 mt-lg-0 d-flex justify-content-center">
                         <img
-                            src="src/assets/Image/Nobackground.png"
-                            alt="Watch"
+                            src="src\assets\Image\caroseul.jpg"
+                            alt="Clock"
                             className="img-fluid custom-img"
                         />
                     </div>

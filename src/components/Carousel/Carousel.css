@@ -1,6 +1,8 @@
 /* Hero Section */
 .hero {
     position: relative;
+    margin-top: 80px;
+    z-index: 1;
     padding: 5rem 0;
     overflow: hidden; /* Đảm bảo video không bị tràn */
 }
@@ -56,7 +58,7 @@
 
 .custom-img {
     max-width: 200px; /* Kích thước ảnh */
-    width: 60%; /* Co dãn theo container */
+    width: 100%; /* Co dãn theo container */
     height: auto; /* Giữ tỉ lệ khung hình */
     display: block;
     margin: 0 auto;

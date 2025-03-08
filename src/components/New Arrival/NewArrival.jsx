@@ -1,136 +1,87 @@
+import React, { useState } from 'react';
 import './NewArrival.css';
+import { Link } from 'react-router-dom';
 
 const NewArrival = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const products = [
+    {
+      title: 'SOFA',
+      description: 'Ghế sofa vải và ghế dài',
+      image: 'Image/OID-1.jpg',
+    },
+    {
+      title: 'ĐÈN',
+      description: 'Đèn trang trí nội thất',
+      image: 'Image/OID-1.jpg',
+    },
+    {
+      title: 'TỦ',
+      description: 'Tủ phòng khách, phòng ngủ',
+      image: 'Image/OIP-3.jpg',
+    },
+    {
+      title: 'TỦ',
+      description: 'Tủ phòng khách, phòng ngủ',
+      image: 'Image/OIP-3.jpg',
+    },
+    {
+      title: 'TỦ',
+      description: 'Tủ phòng khách, phòng ngủ',
+      image: 'Image/OIP-3.jpg',
+    },
+  ];
+
+  const totalSlides = products.length;
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
   return (
-    <div>
-      <section className="new-arrivals py-5">
-        <div className="container text-center">
-          {/* Section Title */}
-          <h2 className="fw-bold mb-4">New Arrivals</h2>
-
-          {/* Bootstrap Carousel */}
-          <div id="productCarousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-            {/* Carousel Indicators */}
-            <div className="carousel-indicators">
-              <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div className="product-section">
+      <div className="container">
+        <div className="product-slider">
+          <div className="title-section d-flex">
+            <a href="" style={{ textDecoration: 'none' }}>
+              <h4 className="section-title">Các dòng sản phẩm nổi bật</h4>
+            </a>
+            <div className="slider-controls">
+              <button className="slider-btn prev" onClick={prevSlide}>
+                <span className="text-dark">&lt;</span>
+              </button>
+              <button className="slider-btn next" onClick={nextSlide}>
+                <span className="text-dark">&gt;</span>
+              </button>
             </div>
+          </div>
 
-            {/* Carousel Items */}
-            <div className="carousel-inner">
-              {/* Slide 1 */}
-              <div className="carousel-item active">
-                <div className="row">
-                  <div className="col-md-4">
-                    <div className="card border-0">
-                      <img src="/Image/OID-1.jpg" className="card-img-top img-fluid" alt="Product 1" />
-                      <div className="card-body">
-                        <h5 className="card-title">Thermo Ball Etip Gloves</h5>
-                        <p className="text-danger fw-bold">$45,743</p>
-                      </div>
-                    </div>
+          <div className="product-list-wrapper">
+            <div
+              className="product-list d-flex gap-3"
+              style={{ transform: `translateX(-${currentSlide * (300 + 20)}px)` }} // 300 là min-width, 20 là gap
+            >
+              {products.map((product, index) => (
+                <div className="product-card d-flex flex-column flex-md-row" key={index}>
+                  <div className="product-info d-flex flex-column justify-content-between p-3 bg-brown text-white">
+                    <h3>{product.title}</h3>
+                    <p>{product.description}</p>
+                    <a href="#">Xem thêm →</a>
                   </div>
-                  <div className="col-md-4">
-                    <div className="card border-0">
-                      <img src="/Image/OIP-3.jpg" className="card-img-top img-fluid" alt="Product 2" />
-                      <div className="card-body">
-                        <h5 className="card-title">Thermo Ball Etip Gloves</h5>
-                        <p className="text-danger fw-bold">$45,743</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="card border-0">
-                      <img src="/Image/OIP-3.jpg" className="card-img-top img-fluid" alt="Product 3" />
-                      <div className="card-body">
-                        <h5 className="card-title">Thermo Ball Etip Gloves</h5>
-                        <p className="text-danger fw-bold">$45,743</p>
-                      </div>
-                    </div>
+                  <div className="product-image d-flex justify-content-center align-items-center p-3">
+                    <img src={product.image} alt={product.title} className="img-fluid" />
                   </div>
                 </div>
-              </div>
-
-              {/* Slide 2 */}
-              <div className="carousel-item">
-                <div className="row">
-                  <div className="col-md-4">
-                    <div className="card border-0">
-                      <img src="/Image/OIP-3.jpg" className="card-img-top img-fluid" alt="Product 4" />
-                      <div className="card-body">
-                        <h5 className="card-title">Winter Jacket</h5>
-                        <p className="text-danger fw-bold">$60,000</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="card border-0">
-                      <img src="/Image/OIP-3.jpg" className="card-img-top img-fluid" alt="Product 5" />
-                      <div className="card-body">
-                        <h5 className="card-title">Leather Bag</h5>
-                        <p className="text-danger fw-bold">$80,000</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="card border-0">
-                      <img src="/Image/OIP-3.jpg" className="card-img-top img-fluid" alt="Product 6" />
-                      <div className="card-body">
-                        <h5 className="card-title">Stylish Hat</h5>
-                        <p className="text-danger fw-bold">$35,000</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Slide 3 */}
-              <div className="carousel-item">
-                <div className="row">
-                  <div className="col-md-4">
-                    <div className="card border-0">
-                      <img src="/Image/OIP-3.jpg" className="card-img-top img-fluid" alt="Product 7" />
-                      <div className="card-body">
-                        <h5 className="card-title">Classic Watch</h5>
-                        <p className="text-danger fw-bold">$100,000</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="card border-0">
-                      <img src="/Image/OIP-3.jpg" className="card-img-top img-fluid" alt="Product 8" />
-                      <div className="card-body">
-                        <h5 className="card-title">Running Shoes</h5>
-                        <p className="text-danger fw-bold">$75,000</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="card border-0">
-                      <img src="/Image/OIP-3.jpg" className="card-img-top img-fluid" alt="Product 9" />
-                      <div className="card-body">
-                        <h5 className="card-title">Sports Cap</h5>
-                        <p className="text-danger fw-bold">$25,000</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
-
-            {/* Carousel Controls */}
-            <button className="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-              <span className="carousel-control-next-icon" aria-hidden="true"></span>
-              <span className="visually-hidden">Next</span>
-            </button>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

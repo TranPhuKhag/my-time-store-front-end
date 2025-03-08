@@ -4,8 +4,8 @@ import './index.css'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import HomePage from './pages/HomePage.jsx'
+import ListProduct from './pages/ListProduct/ListProduct.jsx'
 import RootLayout from './pages/RootLayout.jsx'
-import Carousel from './components/Carousel/Carousel.jsx'
 
 
 
@@ -18,8 +18,8 @@ const router = createBrowserRouter([
         element: <HomePage />
       },
       {
-        path: '/movie/:id',
-        element: <Carousel />
+        path: '/shop',
+        element: <ListProduct />
       },
       {
         // path: '/tv/:id',
